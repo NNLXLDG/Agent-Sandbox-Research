@@ -1,0 +1,26 @@
+services:
+  openclaw-target:
+    image: ghcr.io/openclaw/openclaw:latest
+    container_name: agent_eval_sandbox
+    user: "1000:1000"
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    networks:
+      - sandbox_net
+    volumes:
+      - ./env_data/config:/home/node/.openclaw
+      - ./env_data/workspace:/home/node/.openclaw/workspace
+      
+      - ./test_cases/skills:/home/node/.openclaw/skills:ro
+      - ./test_cases/honeypot:/home/node/.openclaw/workspace/honeypot:rw
+      
+    environment:
+      - NODE_ENV=production
+    ports:
+      - "127.0.0.1:18789:18789"
+
+networks:
+  sandbox_net:
+    driver: bridge

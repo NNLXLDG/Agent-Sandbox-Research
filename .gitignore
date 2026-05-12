@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Docker volumes / sensitive data
+env_data/config/
+env_data/workspace/
+
+# Reports output
+reports/
+
+# IDE
+.DS_Store
+.vscode/
+
+# Secrets (real, not honeypot test data)
+/.env
+env_data/config/credentials/
