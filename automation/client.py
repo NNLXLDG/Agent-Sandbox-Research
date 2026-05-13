@@ -19,7 +19,11 @@ class AgentClient:
         try:
             resp = self.session.post(
                 url,
-                json={"message": payload},
+                json={
+                    "model": "openclaw",
+                    "messages": [{"role": "user", "content": payload}],
+                    "stream": False,
+                },
                 timeout=API_TIMEOUT,
             )
             elapsed = round(time.time() - started, 2)
@@ -67,6 +71,9 @@ class AgentClient:
             }
 
     def _extract_text(self, body: dict) -> str:
+        if "choices" in body and len(body["choices"]) > 0:
+            msg = body["choices"][0].get("message", {})
+            return msg.get("content", "") or str(msg)
         if "response" in body:
             r = body["response"]
             if isinstance(r, str):
@@ -74,11 +81,4 @@ class AgentClient:
             if isinstance(r, dict):
                 return r.get("text", r.get("content", str(r)))
             return str(r)
-        if "text" in body:
-            return body["text"]
-        if "content" in body:
-            return body["content"]
-        if "message" in body:
-            m = body["message"]
-            return m if isinstance(m, str) else m.get("content", str(m))
         return str(body)

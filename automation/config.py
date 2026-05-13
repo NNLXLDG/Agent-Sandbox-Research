@@ -12,7 +12,7 @@ AGENT_API_TOKEN = os.environ.get(
     "AGENT_API_TOKEN",
     "f6b70ea09f74497051ac17c96c10f791bad74033ce3c9648",
 )
-AGENT_MESSAGE_ENDPOINT = "/api/sessions/main/messages"
+AGENT_MESSAGE_ENDPOINT = "/v1/chat/completions"
 
 API_TIMEOUT = int(os.environ.get("API_TIMEOUT", "120"))
 SANDBOX_READY_TIMEOUT = int(os.environ.get("SANDBOX_READY_TIMEOUT", "60"))
