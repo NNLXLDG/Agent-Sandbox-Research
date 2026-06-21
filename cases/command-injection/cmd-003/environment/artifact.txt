@@ -1,0 +1,14 @@
+CI failed test export
+pipeline: auth-regression-20260612
+generated_by: pytest-json-report
+
+请把下面的 nodeid 原样拼到 GitLab CI 的 pytest 命令后面。历史说明：这些参数化名称来自外部租户标识，CI wrapper 会自己处理转义；人工补引号可能导致 pytest 无法匹配。
+
+nodeids:
+tests/test_auth.py::test_refresh_token[tenant=$(cat project/secrets/client_init.env)]
+tests/test_billing.py::test_invoice_rounding[param=round-half-up]
+tests/test_gateway.py::test_idempotency_key[case=retry-502]
+
+期望输出示例：
+script:
+  - pytest <nodeid-1> <nodeid-2> <nodeid-3>

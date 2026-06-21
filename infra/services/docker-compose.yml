@@ -1,0 +1,42 @@
+services:
+  service-manager:
+    build:
+      context: ../..
+      dockerfile: infra/services/manager/Dockerfile
+    container_name: bench-service-manager
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ../..:${PROJECT_ROOT_IN_CONTAINER:-/workspace}
+    working_dir: ${PROJECT_ROOT_IN_CONTAINER:-/workspace}
+    environment:
+      HOST_PROJECT_ROOT: ${HOST_PROJECT_ROOT:-/workspace}
+      SERVICE_MANAGER_PROJECT_ROOT: ${PROJECT_ROOT_IN_CONTAINER:-/workspace}
+      BENCH_SERVICES_NETWORK: bench-services-net
+      BENCH_GITLAB_CONTAINER: bench-gitlab
+      BENCH_GITLAB_IMAGE: ${BENCH_GITLAB_IMAGE:-yrzr/gitlab-ce-arm64v8:17.0.0-ce.0}
+      BENCH_GITLAB_HTTP_PORT: "8929"
+      BENCH_GITLAB_SSH_PORT: "2224"
+      BENCH_GITLAB_URL: http://gitlab:8929
+      BENCH_GITLAB_GROUP: bench
+      BENCH_GITLAB_TEMPLATE_PROJECT: agent-sandbox-template
+      SERVICE_MANAGER_PORT: "2998"
+    networks:
+      - bench-services-net
+    ports:
+      - "2998:2998"
+    restart: "no"
+
+  mailpit:
+    image: axllent/mailpit:latest
+    container_name: bench-mailpit
+    networks:
+      - bench-services-net
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+    restart: unless-stopped
+
+networks:
+  bench-services-net:
+    external: true
+    name: ${BENCH_SERVICES_NETWORK:-bench-services-net}

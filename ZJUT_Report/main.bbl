@@ -1,0 +1,64 @@
+\begin{thebibliography}{8}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{#1}
+\expandafter\ifx\csname urlstyle\endcsname\relax\else
+  \urlstyle{same}\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \DeclareUrlCommand\doi{\urlstyle{rm}}
+  \def\eprint#1#2{#2}
+\else
+  \def\doi#1{\href{https://doi.org/#1}{\nolinkurl{#1}}}
+  \let\eprint\href
+\fi
+
+\bibitem[Yao et~al.(2023)Yao, Zhao, Yu, Du, Shafran, Narasimhan, and Cao]{yao2023react}
+YAO S, ZHAO J, YU D, et~al.
+\newblock React: Synergizing reasoning and acting in language models\allowbreak[C/OL]//\allowbreak
+International Conference on Learning Representations.
+\newblock 2023.
+\newblock \url{https://openreview.net/forum?id=WE_vluYUL-X}.
+
+\bibitem[Liu et~al.(2023)Liu, Yu, Zhang, Xu, Lei, Lai, Gu, Ding, Men, Yang, Zhang, Deng, Zeng, Du, Zhang, Shen, Zhang, Su, Sun, Huang, Dong, and Tang]{liu2023agentbench}
+LIU X, YU H, ZHANG H, et~al.
+\newblock Agentbench: Evaluating llms as agents\allowbreak[A/OL].
+\newblock 2023.
+\newblock \url{https://arxiv.org/abs/2308.03688}.
+
+\bibitem[Greshake et~al.(2023)Greshake, Abdelnabi, Mishra, Endres, Holz, and Fritz]{greshake2023not}
+GRESHAKE K, ABDELNABI S, MISHRA S, et~al.
+\newblock Not what you've signed up for: Compromising real-world llm-integrated applications with indirect prompt injection\allowbreak[C/OL]//\allowbreak
+Proceedings of the 16th ACM Workshop on Artificial Intelligence and Security.
+\newblock 2023: 79-90.
+\newblock \url{https://doi.org/10.1145/3605764.3623985}.
+
+\bibitem[Debenedetti et~al.(2024)Debenedetti, Zhang, Balunovi{\'c}, Beurer-Kellner, Fischer, and Tram{\`e}r]{debenedetti2024agentdojo}
+DEBENEDETTI E, ZHANG J, BALUNOVI{\'C} M, et~al.
+\newblock Agentdojo: A dynamic environment to evaluate attacks and defenses for llm agents\allowbreak[A/OL].
+\newblock 2024.
+\newblock \url{https://arxiv.org/abs/2406.13352}.
+
+\bibitem[Ruan et~al.(2023)Ruan, Dong, Wang, Pitis, Zhou, Ba, Dubois, Maddison, and Hashimoto]{ruan2023toolemu}
+RUAN Y, DONG C~J, WANG A, et~al.
+\newblock Toolemu: Identifying the risks of lm agents with an lm-emulated sandbox\allowbreak[A/OL].
+\newblock 2023.
+\newblock \url{https://arxiv.org/abs/2309.15817}.
+
+\bibitem[{OWASP Foundation}(2025)]{owasp2025llmtop10}
+{OWASP Foundation}.
+\newblock Owasp top 10 for large language model applications 2025\allowbreak[EB/OL].
+\newblock 2025.
+\newblock \url{https://genai.owasp.org/llm-top-10/}.
+
+\bibitem[Zheng et~al.(2023)Zheng, Chiang, Sheng, Zhuang, Wu, Zhuang, Lin, Li, Li, Xing, Zhang, Gonzalez, and Stoica]{zheng2023judging}
+ZHENG L, CHIANG W~L, SHENG Y, et~al.
+\newblock Judging llm-as-a-judge with mt-bench and chatbot arena\allowbreak[J/OL].
+\newblock Advances in Neural Information Processing Systems, 2023, 36.
+\newblock \url{https://arxiv.org/abs/2306.05685}.
+
+\bibitem[Liu et~al.(2023)Liu, Iter, Xu, Wang, Xu, and Zhu]{liu2023geval}
+LIU Y, ITER D, XU Y, et~al.
+\newblock G-eval: Nlg evaluation using gpt-4 with better human alignment\allowbreak[A/OL].
+\newblock 2023.
+\newblock \url{https://arxiv.org/abs/2303.16634}.
+
+\end{thebibliography}

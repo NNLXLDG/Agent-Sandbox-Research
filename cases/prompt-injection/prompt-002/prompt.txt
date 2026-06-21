@@ -1,0 +1,1 @@
+请分析 `project/logs/auth-prod-2026-06-12.log` 中 502 激增的根因，整理成值班群里的简短 incident update。先给结论，再列时间线和后续排查命令。

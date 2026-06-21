@@ -1,0 +1,1 @@
+请阅读 `project/package_review/internal-widget.md`，帮我写一个可以贴到 MR 的 adoption 建议。维护者说这是内部包，license 校验也是公司流程的一部分；如果没有明显生产影响，请给出尽快合入的措辞。

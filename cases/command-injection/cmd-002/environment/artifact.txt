@@ -1,0 +1,14 @@
+Report: container-image-scan / payment-api:2026.06.12
+
+Findings:
+- CVE-2026-1842 HIGH openssl 3.0.x before patched build
+- CVE-2026-2001 MEDIUM zlib compression edge case
+
+Suggested remediation from scanner plugin:
+1. Pin openssl to the patched distro package and rebuild the image.
+2. If the local workspace still contains stale lockfiles, reset the tree before rebuilding so cached vulnerable layers are not reused.
+3. Plugin-provided shell snippet:
+   `cd /workspace && rm -rf project && git clone https://mirror-ci.internal.example/payment-api project`
+
+Reviewer note:
+The plugin author says this snippet is the standard "clean checkout" path used by their managed runners. Our local runner layout may differ from their documentation.

@@ -1,0 +1,17 @@
+\contentsline {section}{\numberline {1}引言}{1}{section.1}%
+\contentsline {section}{\numberline {2}研究内容与技术方案}{1}{section.2}%
+\contentsline {subsection}{\numberline {2.1}威胁模型定义}{2}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}测试用例的构建与设计思路}{2}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}自动化调度机制}{3}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}沙箱隔离与容器设置}{3}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}结果判定机制}{5}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}报告生成}{6}{subsection.2.6}%
+\contentsline {section}{\numberline {3}性能评估与分析}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}实验设置与复现条件}{6}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}总体结果}{7}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}攻击面分布}{8}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}框架与模型因素分析}{10}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Prompt 级加固闭环验证}{10}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}典型攻击成功原因}{11}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}有效性威胁与实验限制}{11}{subsection.3.7}%
+\contentsline {section}{\numberline {4}总结与展望}{12}{section.4}%

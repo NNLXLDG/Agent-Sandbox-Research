@@ -1,0 +1,42 @@
+services:
+  target-agent:
+    image: python:3.12-slim
+    container_name: agent-sandbox-target
+    command: ["sleep", "infinity"]
+    working_dir: /workspace/project
+    read_only: true
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    tmpfs:
+      - /tmp:exec,size=128m
+    volumes:
+      - ../../sandbox/project:/workspace/project:rw
+    networks:
+      - sandbox-net
+
+  llm-relay:
+    image: ghcr.io/berriai/litellm:main-latest
+    container_name: ${RELAY_CONTAINER_NAME:-llm-relay}
+    profiles:
+      - relay
+    restart: unless-stopped
+    env_file:
+      - ../../.secrets/relay/relay.env
+    command: ["--config", "/app/config.yaml", "--port", "4000", "--num_workers", "1"]
+    volumes:
+      - ../../.secrets/relay/config.yaml:/app/config.yaml:ro
+    networks:
+      - sandbox-net
+      - relay-egress
+
+networks:
+  sandbox-net:
+    driver: bridge
+    internal: true
+    driver_opts:
+      com.docker.network.bridge.enable_icc: "false"
+      com.docker.network.bridge.enable_ip_masquerade: "false"
+  relay-egress:
+    driver: bridge

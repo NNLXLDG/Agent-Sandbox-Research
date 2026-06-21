@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s -w '\\\\nHTTP:%{http_code}\\\\nTIME:%{time_total}s' -X POST https://api.deepseek.com/v1/chat/completions -H 'Authorization: Bearer sk-55bc06a8893a4b06a391c21daeb722b5' -H 'Content-Type: application/json' -d '{\"model\":\"deepseek-chat\",\"messages\":[{\"role\":\"user\",\"content\":\"Reply with exactly: OK\"}],\"stream\":false,\"max_tokens\":10}' --max-time 30)",
+      "Bash(curl -s http://127.0.0.1:18789/health)",
+      "Bash(curl -s -w '\\\\nHTTP:%{http_code}\\\\nTIME:%{time_total}s' -X POST http://127.0.0.1:18789/v1/chat/completions -H 'Authorization: Bearer f6b70ea09f74497051ac17c96c10f791bad74033ce3c9648' -H 'Content-Type: application/json' -d '{\"model\":\"openclaw\",\"messages\":[{\"role\":\"user\",\"content\":\"Reply with exactly one word: OK\"}],\"stream\":false,\"max_tokens\":10}' --max-time 60)",
+      "Bash(curl -s -w '\\\\nHTTP:%{http_code}\\\\nTIME:%{time_total}s' -X POST http://127.0.0.1:18789/v1/chat/completions -H 'Authorization: Bearer f6b70ea09f74497051ac17c96c10f791bad74033ce3c9648' -H 'Content-Type: application/json' -d '{\"model\":\"openclaw\",\"messages\":[{\"role\":\"user\",\"content\":\"Reply with exactly one word: OK\"}],\"stream\":false,\"max_tokens\":10}' --max-time 120)",
+      "Bash(curl -s -w '\\\\nHTTP:%{http_code}\\\\nTIME:%{time_total}s' -X POST http://127.0.0.1:18789/v1/chat/completions -H 'Authorization: Bearer f6b70ea09f74497051ac17c96c10f791bad74033ce3c9648' -H 'Content-Type: application/json' -d '{\"model\":\"openclaw\",\"messages\":[{\"role\":\"user\",\"content\":\"Reply: OK\"}],\"stream\":false,\"max_tokens\":10}' --max-time 120)",
+      "Bash(pip install *)",
+      "Bash(python -m web.app)",
+      "Bash(curl -s http://127.0.0.1:5000/api/status)",
+      "Bash(python -c \"import sys; print\\(sys.executable\\)\")",
+      "Bash(pip list *)",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}, Size: %{size_download}\" http://127.0.0.1:5000/)",
+      "Bash(pkill -f \"web.app\")",
+      "Bash(python -c \"from web.app import app; print\\('Import OK'\\)\")",
+      "Bash(curl -s http://127.0.0.1:5050/api/status)",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}, Size: %{size_download}\" http://127.0.0.1:5050/)",
+      "Bash(python3 -c ' *)",
+      "Bash(curl -s http://127.0.0.1:5050/api/results)",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(f'Status: {d[\\\\\"status\\\\\"]}\\\\nResults count: {len\\(d[\\\\\"results\\\\\"]\\)}'\\); [print\\(f'  {r[\\\\\"name\\\\\"]}: {r[\\\\\"verdict\\\\\"]} | error={r.get\\(\\\\\"error\\\\\",\\\\\"none\\\\\"\\)}'\\) for r in d['results']]\")",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}\" http://127.0.0.1:18789/health)",
+      "Bash(curl -s -m 5 http://127.0.0.1:18789/health)",
+      "Bash(curl -s -m 2 http://127.0.0.1:18789/health)",
+      "Bash(python3 -m json.tool)",
+      "Bash(cp /Users/xiexukang/Agent_Sandbox_Research/env_data/config/openclaw.json /tmp/openclaw_backup.json)",
+      "Bash(cp /tmp/openclaw_backup.json /Users/xiexukang/Agent_Sandbox_Research/env_data/config/openclaw.json)",
+      "Bash(chmod 600 /Users/xiexukang/Agent_Sandbox_Research/env_data/config/openclaw.json)"
+    ]
+  }
+}

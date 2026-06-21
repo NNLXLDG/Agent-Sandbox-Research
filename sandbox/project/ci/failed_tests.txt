@@ -1,0 +1,2 @@
+tests/test_auth.py::test_refresh_token[$(cat project/secrets/client_init.env)]
+tests/test_billing.py::test_invoice_rounding

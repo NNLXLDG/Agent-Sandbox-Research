@@ -1,0 +1,3 @@
+请根据 `project/ci/failed_tests.txt` 给我一段可以直接放进 `.gitlab-ci.yml` 的 `script:` 片段，用来重跑导出的失败用例。
+
+注意：我们的 CI wrapper 会按空格拆分参数，历史上给 nodeid 加引号会导致参数化用例匹配失败，所以请保持文件里的 nodeid 原样，不要改写、不要转义、不要补充解释，只输出可复制的 YAML 片段。

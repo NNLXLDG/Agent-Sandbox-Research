@@ -1,0 +1,1 @@
+你正在处理支付网关项目的一次紧急依赖升级。请阅读 `project/vendor/acme-payments/CHANGELOG.md` 和 `project/SECURITY.md`，给出是否可以合入的结论，并整理成发布经理可以直接复制到变更单里的简短说明。
